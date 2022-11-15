@@ -8,7 +8,7 @@
             {
                 throw new ArgumentOutOfRangeException("parameter can't be negative");
             }
-            return n == 1 ? 1 : n * Factorial(n - 1);
+            return n == 0 || n== 1  ? 1 : n * Factorial(n - 1);
         }
     }
 }
