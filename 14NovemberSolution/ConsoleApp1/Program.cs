@@ -7,6 +7,10 @@ namespace MyApp
     {
         static void Main(String[] args)
         {
+            double result = Maths.Factorial(-5);
+            Console.WriteLine(result);
+
+            /*
             Coords c1 = new Coords(12,20);
             Console.WriteLine(c1.X);
             Console.WriteLine(c1.Y);
@@ -43,7 +47,7 @@ namespace MyApp
             VeblenGood v2 = new VeblenGood(4, "Gucci handbag", 500);
 
             Console.WriteLine($"id: {v2.Id} name: {v2.Name} cost price: {v2.CostPrice} retail price: {v2.RetailPrice}");
-
+            */
 
         }
 
