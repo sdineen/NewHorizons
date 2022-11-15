@@ -7,8 +7,15 @@ namespace MyApp
     {
         static void Main(String[] args)
         {
-            double result = Maths.Factorial(-5);
-            Console.WriteLine(result);
+            try
+            {
+                double result = Maths.Factorial(-5);
+                Console.WriteLine(result);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             /*
             Coords c1 = new Coords(12,20);
