@@ -6,28 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Product
+    public class Product
     {
-        private int id;
-        private string name;
-        private double costPrice;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public double CostPrice
-        {
-            get { return costPrice; }
-            set { costPrice = value; }
-        }
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public double CostPrice { get; set; }
+        public double RetailPrice { get; set; }
     }
 }

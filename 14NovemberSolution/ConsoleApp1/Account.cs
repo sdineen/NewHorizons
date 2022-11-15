@@ -10,28 +10,32 @@ namespace ConsoleApp1
     {
         //instance variables
         private string? id;
-        private string name = "";
+        private string? name;
         private string? password;
 
         //properties
-        public string? Id
-        {
-            get { return id; }
-            set { id = value; }
+
+        //expression bodied property
+        public string? Name 
+        { 
+            get => name; 
+            set => name = value;
         }
 
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string? Id { get => id; set => id = value; }
+
+        //public string? Id
+        //{
+        //    get { return id; }
+        //    set { id = value; }
+        //}
+
 
         public string? Password
         {
             get { return password; }
             set { password = value; }
         }
-
 
 
     }
