@@ -10,10 +10,21 @@ namespace ConsoleApp1
     {
         public static void WriteToFile(string text)
         {
-            //UnauthorizedAccessException
-            File.WriteAllText(@"C:\Users\Owner\Documents\temp\file.txt", text);
-            //DirectoryNotFoundException
-            File.WriteAllText(@"Y:\file.txt", text);
+            try
+            {
+                //UnauthorizedAccessException
+                File.WriteAllText(@"C:\Users\Owner\Documents\temp\file.txt", text);
+                //DirectoryNotFoundException
+                File.WriteAllText(@"Y:\file.txt", text);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void Main(string[] args)
