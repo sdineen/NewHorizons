@@ -21,8 +21,12 @@ namespace MyApp
             p1.Id = 1;
             p1.Name = "Dog food";
             p1.CostPrice= 2.54;
+            p1.RetailPrice = 3.71;
             //display the properties at the console
-            Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice}");
+            Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice} retail price: {p1.RetailPrice}");
+
+            Product p2 = new Product(2, "Knife", 0.65, 1.52);
+
         }
 
        
