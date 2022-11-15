@@ -1,5 +1,8 @@
 ﻿
 using ConsoleApp1;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace MyApp
 {
@@ -7,54 +10,27 @@ namespace MyApp
     {
         static void Main(String[] args)
         {
-            try
+
+            //build a 4 element array of type Product
+            //Product[] products = new Product[4];
+            List<Product> arrayList= new List<Product>();
+
+            //add two NormalGood objects and two VeblenGood objects to the array
+            arrayList.Add(new  NormalGood(1, "Pedigree Chum", 0.4));
+            arrayList.Add(new NormalGood(2, "Fork", 0.6));
+            arrayList.Add(new VeblenGood(3, "Krug Champagne", 25));
+            arrayList.Add(new VeblenGood(4, "Rolex watch", 700));
+
+            //arrayList.Add("some text");
+
+            //write a foreach loop to iterate through the array,
+            //   displaying the name and retail price of each product
+
+            foreach (Product product in arrayList)
             {
-                double result = Maths.Factorial(-5);
-                Console.WriteLine(result);
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"{product.Name} Cost Price {product.CostPrice:C} Retail Price {product.RetailPrice:C} ");
             }
 
-            /*
-            Coords c1 = new Coords(12,20);
-            Console.WriteLine(c1.X);
-            Console.WriteLine(c1.Y);
-
-            //acc1 is an object reference variable
-            Account acc1 = new Account(); //builds an Account object
-            acc1.Name = "Bill"; //sets the name variable of the object
-            acc1.Id = "account1";
-            acc1.Password = "password";
-
-            Console.WriteLine($"id: {acc1.Id} name: {acc1.Name}");
-
-            Account acc2 = new Account("account2", "Dave", "pwd2");
-
-            //build a Product object
-            NormalGood p1 = new NormalGood();
-            //set the properties of the object
-            p1.Id = 1;
-            p1.Name = "Dog food";
-            p1.CostPrice= 2.54;
-            //p1.RetailPrice = 3.71;
-            //display the properties at the console
-            //Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice} retail price: {p1.RetailPrice}");
-
-            NormalGood p2 = new NormalGood(2, "Knife", 0.65);
-            Console.WriteLine($"id: {p2.Id} name: {p2.Name} cost price: {p2.CostPrice} retail price: {p2.RetailPrice}");
-
-
-            VeblenGood v1 = new VeblenGood();
-            v1.Id = 3;
-            v1.Name = "Rolex";
-            v1.CostPrice= 500;
-
-            VeblenGood v2 = new VeblenGood(4, "Gucci handbag", 500);
-
-            Console.WriteLine($"id: {v2.Id} name: {v2.Name} cost price: {v2.CostPrice} retail price: {v2.RetailPrice}");
-            */
 
         }
 
