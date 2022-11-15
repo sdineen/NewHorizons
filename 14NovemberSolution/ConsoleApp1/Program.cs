@@ -18,12 +18,12 @@ namespace MyApp
             Account acc2 = new Account("account2", "Dave", "pwd2");
 
             //build a Product object
-            Product p1 = new Product();
+            NormalGood p1 = new NormalGood();
             //set the properties of the object
             p1.Id = 1;
             p1.Name = "Dog food";
             p1.CostPrice= 2.54;
-            p1.RetailPrice = 3.71;
+            //p1.RetailPrice = 3.71;
             //display the properties at the console
             Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice} retail price: {p1.RetailPrice}");
 

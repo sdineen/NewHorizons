@@ -23,6 +23,6 @@ namespace ConsoleApp1
         public int Id { get; set; }
         public string? Name { get; set; }
         public double CostPrice { get; set; }
-        public double RetailPrice { get; set; }
+        public virtual double RetailPrice { get; set; }
     }
 }
