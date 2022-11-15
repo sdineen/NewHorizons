@@ -38,7 +38,7 @@ namespace MyApp
 
             VeblenGood v2 = new VeblenGood(4, "Gucci handbag", 500);
 
-            //Console.WriteLine($"id: {v1.Id} name: {v1.Name} cost price: {v1.CostPrice} retail price: {v1.RetailPrice}");
+            Console.WriteLine($"id: {v2.Id} name: {v2.Name} cost price: {v2.CostPrice} retail price: {v2.RetailPrice}");
 
 
         }
