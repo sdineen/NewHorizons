@@ -21,6 +21,10 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(ex.Message);
             }
+            finally
+            {
+                //always executed
+            }
 
         }
 

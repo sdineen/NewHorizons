@@ -1,8 +1,8 @@
 ﻿namespace MyApp
 {
-    internal class Maths
+    public class Maths
     {
-        internal static double Factorial(int n)
+        public static double Factorial(int n)
         {
             if(n < 0)
             {
