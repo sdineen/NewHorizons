@@ -14,6 +14,15 @@ namespace MyApp
             acc1.Password = "password";
 
             Console.WriteLine($"id: {acc1.Id} name: {acc1.Name}");
+
+            //build a Product object
+            Product p1 = new Product();
+            //set the properties of the object
+            p1.Id = 1;
+            p1.Name = "Dog food";
+            p1.CostPrice= 2.54;
+            //display the properties at the console
+            Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice}");
         }
 
        

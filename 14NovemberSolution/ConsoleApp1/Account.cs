@@ -8,11 +8,13 @@ namespace ConsoleApp1
 {
     internal class Account
     {
-        private string id;
-        private string name;
-        private string password;
+        //instance variables
+        private string? id;
+        private string name = "";
+        private string? password;
 
-        public string Id
+        //properties
+        public string? Id
         {
             get { return id; }
             set { id = value; }
@@ -24,7 +26,7 @@ namespace ConsoleApp1
             set { name = value; }
         }
 
-        public string Password
+        public string? Password
         {
             get { return password; }
             set { password = value; }

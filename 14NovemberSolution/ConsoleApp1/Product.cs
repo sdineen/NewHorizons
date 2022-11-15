@@ -12,15 +12,15 @@ namespace ConsoleApp1
         private string name;
         private double costPrice;
 
-        public int Id 
+        public int Id
         {
             get { return id; }
             set { id = value; }
         }
 
         public string Name
-        { 
-            get { return name; } 
+        {
+            get { return name; }
             set { name = value; }
         }
 
