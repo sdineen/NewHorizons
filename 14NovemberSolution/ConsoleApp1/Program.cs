@@ -25,12 +25,24 @@ namespace MyApp
             p1.CostPrice= 2.54;
             //p1.RetailPrice = 3.71;
             //display the properties at the console
-            Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice} retail price: {p1.RetailPrice}");
+            //Console.WriteLine($"id: {p1.Id} name: {p1.Name} cost price: {p1.CostPrice} retail price: {p1.RetailPrice}");
 
-            Product p2 = new Product(2, "Knife", 0.65, 1.52);
+            NormalGood p2 = new NormalGood(2, "Knife", 0.65);
+            Console.WriteLine($"id: {p2.Id} name: {p2.Name} cost price: {p2.CostPrice} retail price: {p2.RetailPrice}");
+
+
+            VeblenGood v1 = new VeblenGood();
+            v1.Id = 3;
+            v1.Name = "Rolex";
+            v1.CostPrice= 500;
+
+            VeblenGood v2 = new VeblenGood(4, "Gucci handbag", 500);
+
+            //Console.WriteLine($"id: {v1.Id} name: {v1.Name} cost price: {v1.CostPrice} retail price: {v1.RetailPrice}");
+
 
         }
 
-       
+
     }
 }

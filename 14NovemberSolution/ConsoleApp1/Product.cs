@@ -12,7 +12,7 @@ namespace ConsoleApp1
         {
         }
 
-        public Product(int id, string name, double costPrice, double retailPrice)
+        public Product(int id, string name, double costPrice, double retailPrice = 0)
         {
             Id = id;
             Name = name;
