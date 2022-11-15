@@ -17,6 +17,13 @@ namespace ConsoleApp1
         {
         }
 
+        public Account(string id, string name, string password)
+        {
+            Id = id;
+            Name = name;
+            Password = password;
+        }
+
         //properties
 
         //expression bodied property

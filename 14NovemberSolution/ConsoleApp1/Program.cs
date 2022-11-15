@@ -15,6 +15,8 @@ namespace MyApp
 
             Console.WriteLine($"id: {acc1.Id} name: {acc1.Name}");
 
+            Account acc2 = new Account("account2", "Dave", "pwd2");
+
             //build a Product object
             Product p1 = new Product();
             //set the properties of the object
