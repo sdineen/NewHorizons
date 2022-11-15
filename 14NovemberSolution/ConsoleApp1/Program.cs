@@ -7,6 +7,10 @@ namespace MyApp
     {
         static void Main(String[] args)
         {
+            Coords c1 = new Coords(12,20);
+            Console.WriteLine(c1.X);
+            Console.WriteLine(c1.Y);
+
             //acc1 is an object reference variable
             Account acc1 = new Account(); //builds an Account object
             acc1.Name = "Bill"; //sets the name variable of the object
