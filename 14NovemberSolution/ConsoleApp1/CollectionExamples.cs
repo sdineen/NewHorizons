@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Examples.LINQ;
+
 
 namespace ConsoleApp1
 {
@@ -11,6 +7,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            int i = 17;
+            bool result = i.IsPrime();
+            Console.WriteLine(result);
+
+
+
+
+
             //int[] numbers = { 0, 1, 2, 3, 4, 5, 6 };
 
             //var result =
@@ -35,28 +39,28 @@ namespace ConsoleApp1
 
 
 
-            ICollection < Product > products = new List<Product> {
-                new Product(1, "Pedigree Chum", 0.70, 1.42),
-                new Product(2, "Knife", 0.60, 1.31),
-                new Product(3, "Fork", 0.75, 1.57),
-                new Product(4, "Spaghetti", 0.90, 1.92),
-                new Product(5, "Cheddar Cheese", 0.65, 1.47),
-                new Product(6, "Bean bag", 15.20, 32.20),
-                new Product(7, "Bookcase", 22.30, 46.32),
-                new Product(8, "Table", 55.20, 134.80),
-                new Product(9, "Chair", 43.70, 110.20),
-                new Product(10, "Doormat", 3.20, 7.40)
-            };
+            //ICollection < Product > products = new List<Product> {
+            //    new Product(1, "Pedigree Chum", 0.70, 1.42),
+            //    new Product(2, "Knife", 0.60, 1.31),
+            //    new Product(3, "Fork", 0.75, 1.57),
+            //    new Product(4, "Spaghetti", 0.90, 1.92),
+            //    new Product(5, "Cheddar Cheese", 0.65, 1.47),
+            //    new Product(6, "Bean bag", 15.20, 32.20),
+            //    new Product(7, "Bookcase", 22.30, 46.32),
+            //    new Product(8, "Table", 55.20, 134.80),
+            //    new Product(9, "Chair", 43.70, 110.20),
+            //    new Product(10, "Doormat", 3.20, 7.40)
+            //};
 
-            IEnumerable<Product> filteredProducts =
-                from p in products
-                where p.Name.StartsWith("B")
-                select p;
-
-            foreach (Product product in filteredProducts)
-            {
-                Console.WriteLine(product.Name);
-            }
+            //IEnumerable<Product> filteredProducts =
+            //    from p in products
+            //    where p.CostPrice > 10
+            //    select p;
+            
+            //foreach (Product product in filteredProducts)
+            //{
+            //    Console.WriteLine(product.Name);
+            //}
 
 
             //var keyValuePairs = new Dictionary<string, Product>();
