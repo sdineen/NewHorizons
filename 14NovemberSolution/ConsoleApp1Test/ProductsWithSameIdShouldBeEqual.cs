@@ -21,5 +21,17 @@ namespace ConsoleApp1Test
             Assert.True(equal);
         }
 
+        [Fact]
+        public void ProductsShouldWorkCorrectlyWithList()
+        {
+            List<Product> products = new List<Product>();
+            Product product1 = new Product { Id = 1 };
+            Product product2 = new Product { Id = 1 };
+            products.Add(product1);
+            bool removed = products.Remove(product2);
+            Assert.Empty(products);
+        }
+
+
     }
 }

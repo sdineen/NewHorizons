@@ -20,6 +20,7 @@ namespace ConsoleApp1
             //RetailPrice = retailPrice;
         }
 
+        //expression bodied method
         public override bool Equals(object? obj) =>
             obj is Product && (obj as Product).Id == Id;
 
