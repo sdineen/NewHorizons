@@ -48,6 +48,16 @@ namespace ConsoleApp1
                 new Product(10, "Doormat", 3.20, 7.40)
             };
 
+            IEnumerable<Product> filteredProducts =
+                from p in products
+                where p.Name.StartsWith("B")
+                select p;
+
+            foreach (Product product in filteredProducts)
+            {
+                Console.WriteLine(product.Name);
+            }
+
 
             //var keyValuePairs = new Dictionary<string, Product>();
             //keyValuePairs.Add("p2", new Product(2, "Knife", 0.60, 1.31));
