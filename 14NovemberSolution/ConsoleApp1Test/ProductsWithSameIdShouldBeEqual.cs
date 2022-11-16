@@ -32,6 +32,17 @@ namespace ConsoleApp1Test
             Assert.Empty(products);
         }
 
+        [Fact]
+        public void ProductsShouldWorkCorrectlyWithHashSet()
+        {
+            HashSet<Product> products = new HashSet<Product>();
+            Product product1 = new Product { Id = 1 };
+            Product product2 = new Product { Id = 1 };
+            products.Add(product1);
+            bool removed = products.Remove(product2);
+            Assert.Empty(products);
+        }
+
 
     }
 }
