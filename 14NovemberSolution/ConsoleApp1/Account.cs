@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Account
+    public class Account
     {
         //instance variables
         private string? id;

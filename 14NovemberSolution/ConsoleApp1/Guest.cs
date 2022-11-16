@@ -2,7 +2,8 @@
 {
     public class Guest
     {
-		private int id;
+
+        private int id;
 		private string name;
 		private DateTime checkInDate;
 
@@ -27,5 +28,6 @@
 			set { id = value; }
 		}
 
-	}
+
+    }
 }
