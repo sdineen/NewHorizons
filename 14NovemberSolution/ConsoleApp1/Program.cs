@@ -59,8 +59,10 @@ namespace MyApp
                 Console.WriteLine($"{product.Name} Cost Price {product.CostPrice:C} Retail Price {product.RetailPrice:C} ");
             }
 
+            int i = 5;
+            double d = i;  //widening conversion
 
-            Product p1 = new NormalGood(1, "Pedigree Chum", 0.4);
+            Product p1 = new NormalGood(1, "Pedigree Chum", 0.4); //object reference conversion
             Product p2 = new NormalGood(2, "Fork", 0.6);
 
             LineItem lineItem1 = new LineItem();

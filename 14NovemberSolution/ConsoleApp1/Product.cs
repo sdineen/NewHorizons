@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public abstract class Product
+    public class Product : Object
     {
         public Product()
         {
@@ -23,6 +23,6 @@ namespace ConsoleApp1
         public int Id { get; set; }
         public string? Name { get; set; }
         public double CostPrice { get; set; }
-        public abstract double RetailPrice { get;  }
+        public virtual double RetailPrice { get;  }
     }
 }
