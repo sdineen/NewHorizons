@@ -20,7 +20,7 @@ namespace MyApp
 
             Hotel hotel1 = new Hotel();
             hotel1.Id = 1;
-            List<Guest> guestList = new List<Guest>();
+            HashSet<Guest> guestList = new HashSet<Guest>();
             Guest guest1 = new Guest();
             guest1.Id = 221;
             guest1.Name = "John Smith";

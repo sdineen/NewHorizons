@@ -11,7 +11,7 @@ namespace ConsoleApp1
         public int OrderId { get; set; }
         public DateTime Date { get; set; }
         public Account? Account { get; set; }
-        public List<LineItem> LineItems { get; set; } = new List<LineItem>();
+        public ICollection<LineItem> LineItems { get; set; } = new HashSet<LineItem>();
         public OrderStatus OrderStatus { get; set; }
 
     }

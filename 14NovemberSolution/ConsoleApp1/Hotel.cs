@@ -9,7 +9,7 @@ namespace ConsoleApp1
     internal class Hotel
     {
 		public int Id { get; set; }
-		public List<Guest> Guests { get; set; }
+		public ICollection<Guest> Guests { get; set; }
 
 		//instance variable
 		//private int id;
