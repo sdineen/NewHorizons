@@ -2,5 +2,9 @@
 {
     public enum OrderStatus
     {
+        Provisional,
+        Confirmed,
+        Dispatched,
+        Delivered
     }
 }

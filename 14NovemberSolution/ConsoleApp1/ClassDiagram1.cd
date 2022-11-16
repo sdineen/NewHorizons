@@ -41,15 +41,23 @@
   <Class Name="ConsoleApp1.Order">
     <Position X="3.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAACAAAAAAAAAAABAAAAAAAAAEA=</HashCode>
+      <HashCode>EAAAAAAAAAACAAAAAAACAAAAAAAAAAABAAAAAAAAAEA=</HashCode>
       <FileName>Order.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Account" />
+      <Property Name="OrderStatus" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="LineItems" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Enum Name="ConsoleApp1.OrderStatus">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgIQAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>OrderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

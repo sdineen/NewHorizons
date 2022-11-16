@@ -30,6 +30,12 @@ namespace MyApp
             hotel1.Guests = guestList;
 
 
+            //build a Product object
+            //build a LineItem object associated with the product
+            //build an Order object and add the LineItem to the List of LineItems
+            //build an Account object
+            //set the Order object's Account property
+
             //build a 4 element array of type Product
             //Product[] products = new Product[4];
             List<Product> productList= new List<Product>();
@@ -52,6 +58,34 @@ namespace MyApp
             {
                 Console.WriteLine($"{product.Name} Cost Price {product.CostPrice:C} Retail Price {product.RetailPrice:C} ");
             }
+
+
+            Product p1 = new NormalGood(1, "Pedigree Chum", 0.4);
+            Product p2 = new NormalGood(2, "Fork", 0.6);
+
+            LineItem lineItem1 = new LineItem();
+            lineItem1.Id = 1;
+            lineItem1.Product = p1;
+            lineItem1.Quantity = 4;
+
+            LineItem lineItem2 = new LineItem();
+            lineItem1.Id = 3;
+            lineItem1.Product = p2;
+            lineItem1.Quantity = 2;
+
+            Order order1 = new Order();
+            order1.OrderId = 1;
+            order1.LineItems.Add(lineItem1);
+            order1.LineItems.Add(lineItem2);
+            order1.Date= DateTime.Now;
+            order1.OrderStatus = OrderStatus.Delivered;
+
+            Account account1 = new Account();
+            account1.Id = "1";
+            account1.Name = "Dave Dawdson";
+            account1.Password = "password";
+
+            order1.Account = account1; 
 
 
         }
