@@ -20,6 +20,19 @@ namespace ConsoleApp1
             //RetailPrice = retailPrice;
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        //equal objects must have equal hashcodes
+        //unequal objects should have unequal hashcodes
+        public override int GetHashCode()
+        {
+            return Id;
+        }
+
+
         //expression bodied method
         public override bool Equals(object? obj) =>
             obj is Product && (obj as Product).Id == Id;
