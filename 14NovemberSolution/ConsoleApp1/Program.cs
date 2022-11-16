@@ -10,6 +10,10 @@ namespace MyApp
     {
         static void Main(String[] args)
         {
+            double d = 5.9;
+            int i = (int)d;//cast the double as an int
+            Console.WriteLine(i);
+
             //DayOfWeek d = DayOfWeek.Wednesday;
             //DateTime dt = new DateTime(2022, 11, 16);
             //Console.WriteLine(dt.DayOfWeek == d);
@@ -59,8 +63,7 @@ namespace MyApp
                 Console.WriteLine($"{product.Name} Cost Price {product.CostPrice:C} Retail Price {product.RetailPrice:C} ");
             }
 
-            int i = 5;
-            double d = i;  //widening conversion
+
 
             Product p1 = new NormalGood(1, "Pedigree Chum", 0.4); //object reference conversion
             Product p2 = new NormalGood(2, "Fork", 0.6);

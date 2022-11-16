@@ -20,6 +20,18 @@ namespace ConsoleApp1
             //RetailPrice = retailPrice;
         }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is Product && (obj as Product).Id == Id;
+
+            //Product? otherProduct = obj as Product;
+            //if (otherProduct != null)
+            //{
+            //    return false;
+            //}
+            //return Id == otherProduct.Id;
+        }
+
         public int Id { get; set; }
         public string? Name { get; set; }
         public double CostPrice { get; set; }
