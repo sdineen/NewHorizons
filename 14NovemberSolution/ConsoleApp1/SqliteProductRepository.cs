@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
@@ -41,7 +42,7 @@ namespace ConsoleApp1
             {
                 products.Add(new Product
                 {
-                    Id = (int)dataReader["id"],
+                    Id = Convert.ToInt32(dataReader["id"]),
                     Name = (string)dataReader["name"],
                     CostPrice = (double)dataReader["costPrice"],
                     RetailPrice = (double)dataReader["retailPrice"]

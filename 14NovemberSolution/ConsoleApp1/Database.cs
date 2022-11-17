@@ -13,8 +13,13 @@ namespace ConsoleApp1
         {
 
             SqliteProductRepository productRepository = new SqliteProductRepository();
-            Product product = new Product(1, "chair", 22.0, 34.7);
-            productRepository.Create(product);
+
+            foreach (Product product in productRepository.SelectAll())
+            {
+                Console.WriteLine(product);
+            }
+            //Product product = new Product(1, "chair", 22.0, 34.7);
+            //productRepository.Create(product);
 
 
             //try
