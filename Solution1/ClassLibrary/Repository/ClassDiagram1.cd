@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Interface Name="ClassLibrary.Repository.IAccountRepositoryAsync">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Repository\IAccountRepositoryAsync.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClassLibrary.Repository.IOrderRepositoryAsync">
+    <Position X="7.75" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAABAAAAAAAAAAAAAgAAAAAAIIAAIA=</HashCode>
+      <FileName>Repository\IOrderRepositoryAsync.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClassLibrary.Repository.IProductRepositoryAsync">
+    <Position X="3.5" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAEAAAAAAAAAAAAAAAAAAAgAAAAgAIAAAIA=</HashCode>
+      <FileName>Repository\IProductRepositoryAsync.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClassLibrary.Repository.IProductRepository">
+    <Position X="4" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAEAAEAAAAAAAAACAAA=</HashCode>
+      <FileName>Repository\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

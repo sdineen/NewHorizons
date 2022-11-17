@@ -1,0 +1,19 @@
+﻿@using ClassLibrary.Entity;
+@model ICollection<Product>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @foreach (Product product in Model)
+    {
+        @product.Name
+        <br />
+    }
+</body>
+</html>

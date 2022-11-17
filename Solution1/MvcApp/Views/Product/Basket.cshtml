@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ClassLibrary.Entity.LineItem>
+
+@{
+    ViewData["Title"] = "Basket";
+}
+
+<h1>Basket</h1>
+
+<form asp-action="Purchase">
+    <input type="submit" value="Purchase" class="btn-dark" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Product.Name
+                </td>
+                <td>
+                    @item.Quantity
+                </td>
+                <td>
+                    <a asp-action="RemoveProductFromOrder"
+                       asp-route-id="@item.Product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

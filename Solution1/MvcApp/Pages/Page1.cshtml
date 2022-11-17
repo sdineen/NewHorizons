@@ -1,0 +1,17 @@
+﻿@page
+@model MvcApp.Page1Model
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@Model.Message
+
+    <form method="post">
+        <input asp-for="Product.Id" />
+        <br />
+        <input asp-for="Product.Name" />
+        <br />
+        <input asp-for="Product.CostPrice" />
+        <br />
+        <input asp-for="Product.RetailPrice" />
+        <br />
+        <input type="submit" />
+    </form>

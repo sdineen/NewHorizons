@@ -1,0 +1,17 @@
+    <system.webServer>
+	      <modules>
+        <remove name="WebDAVModule" />
+      </modules>
+      <handlers>
+	          <remove name="aspNetCore" />
+        <remove name="WebDAV" />
+        <!-- I removed the following handlers too, but these
+                 can probably be ignored for most installations -->
+        <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+        <remove name="OPTIONSVerbHandler" />
+        <remove name="TRACEVerbHandler" />
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath="dotnet" arguments=".\ReactApp1.dll" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="inprocess" />
+    </system.webServer>
+    <!-- https://billing.hostinguk.net/knowledgebase.php?id=991-405-error-method-not-allowed -->

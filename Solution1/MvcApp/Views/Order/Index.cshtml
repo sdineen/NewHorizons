@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ClassLibrary.Entity.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Orders for @Model.FirstOrDefault()?.Account.Name</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderStatus)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.OrderId }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,68 @@
+﻿<Window x:Class="WinClient.Products.View.ProductsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinClient.Products.View"
+        mc:Ignorable="d"
+        Title="Product Store" Height="450" Width="800"
+        Language="en-GB">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <!--Margin left,top,right,bottom-->
+            <Setter Property="Margin" Value="5,0,0,0" />
+            <!--px (default) is device-independent units 
+            (1/96th inch or 0.26mm per unit)-->
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}"/>
+        </Style>
+        <SolidColorBrush x:Key="ButtonBackground" Color="#FF34C5DC"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <Label Content="Search" />
+            <TextBox Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" Name="SearchBox" Width="100" />
+            <Label Content="Username" />
+            <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Name="UsernameBox" Width="100" />
+            <Label Content="Password" />
+            <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Name="PasswordBox" Width="100" />
+
+            <Button Command="{Binding LoginCommand}" Content="Login"/>
+            <Button Command="{Binding AddProductCommand}" Content="Add"/>
+            <Button Command="{Binding PurchaseCommand}" Content="Purchase"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Products}" 
+                GridLinesVisibility="None" 
+                AutoGenerateColumns="False"
+                SelectedItem="{Binding SelectedProduct}"                 
+                IsReadOnly="True" >
+            <DataGrid.Columns>
+                <!-- Binding Property sets the binding that associates 
+                        the column with a property in the data source   -->
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding CostPrice, StringFormat='C'}" Header="Cost Price"/>
+                <DataGridTextColumn Binding="{Binding RetailPrice, StringFormat='C'}" Header="Retail Price"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Grid.Row="2" ItemsSource="{Binding LineItems}" 
+                GridLinesVisibility="None" 
+                AutoGenerateColumns="False" 
+                IsReadOnly="True" 
+                IsHitTestVisible="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Product.Name}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Window>

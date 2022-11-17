@@ -73,6 +73,7 @@ namespace ConsoleApp1
 
 
 
+
             ICollection<Product> products = new List<Product> {
                 new Product(1, "Pedigree Chum", 0.70, 1.42),
                 new Product(2, "Knife", 0.60, 1.31),
