@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +12,20 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             SqliteConnection connection = new SqliteConnection("Data Source=database.db");
-            connection.Open();
-            SqliteCommand cmd = new SqliteCommand();
-            cmd.Connection = connection;
-            cmd.CommandText = "create table if not exists accounts(id integer primary key, name text not null, password text not null); ";
-            bool tableCreated = cmd.ExecuteNonQuery() == 1;
-            cmd.CommandText = "insert into accounts (name, password)  values('John Smith', 'test'); ";
-            int rowsInserted = cmd.ExecuteNonQuery();
-            connection.Close();
+            try
+            {
+                connection.Open();
+                SqliteCommand cmd = new SqliteCommand();
+                cmd.Connection = connection;
+                cmd.CommandText = "create table if not exists accounts(id integer primary key, name text not null, password text not null); ";
+                bool tableCreated = cmd.ExecuteNonQuery() == 1;
+                cmd.CommandText = "insert into accounts (name, password)  values('John Smith', 'test'); ";
+                int rowsInserted = cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                connection.Close();
+            }
 
         }
     }
