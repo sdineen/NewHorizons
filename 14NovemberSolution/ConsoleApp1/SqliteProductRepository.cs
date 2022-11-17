@@ -31,7 +31,23 @@ namespace ConsoleApp1
 
         public ICollection<Product>? SelectAll()
         {
-            throw new NotImplementedException();
+            using SqliteConnection connection = new SqliteConnection(connectionString);
+            connection.Open();
+            string sql = "select * from products";
+            SqliteCommand cmd = new SqliteCommand(sql, connection);
+            SqliteDataReader dataReader = cmd.ExecuteReader();
+            ICollection<Product> products = new List<Product>();
+            while (dataReader.Read())
+            {
+                products.Add(new Product
+                {
+                    Id = (int)dataReader["id"],
+                    Name = (string)dataReader["name"],
+                    CostPrice = (double)dataReader["costPrice"],
+                    RetailPrice = (double)dataReader["retailPrice"]
+                });
+            }
+            return products;
         }
 
         public Product? SelectById(int id)
