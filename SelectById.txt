@@ -1,0 +1,19 @@
+        public Account SelectById(string id)
+        {
+            using SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            string sql = "select * from accounts where id = @id";
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("id", id);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.Read())
+            {
+                return new Account
+                {
+                    Id = (string)dataReader["id"],
+                    Name = (string)dataReader["name"],
+                    Password = (string)dataReader["password"]
+                };
+            }
+            return null;
+        }
