@@ -19,7 +19,7 @@ namespace ConsoleApp1
                 cmd.Connection = connection;
                 cmd.CommandText = "create table if not exists accounts(id integer primary key, name text not null, password text not null); ";
                 bool tableCreated = cmd.ExecuteNonQuery() == 1;
-                cmd.CommandText = "insert into accountsx (name, password)  values('John Smith', 'test'); ";
+                cmd.CommandText = "insert into accounts (name, password)  values('John Smith', 'test'); ";
                 int rowsInserted = cmd.ExecuteNonQuery();
             }
             catch (SqliteException ex)
