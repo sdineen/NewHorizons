@@ -12,12 +12,32 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            SqliteProductRepository productRepository = new SqliteProductRepository();
+            EfProductRepository productRepository = new EfProductRepository(
+                new ECommerceContext());
 
-            foreach (Product product in productRepository.SelectAll())
+            List<Product> productList = new List<Product>();
+            productList.Add(new NormalGood(1, "Pedigree Chum", 0.4));
+            productList.Add(new NormalGood(2, "Fork", 0.6));
+            productList.Add(new VeblenGood(3, "Krug Champagne", 25));
+            productList.Add(new VeblenGood(4, "Rolex watch", 700));
+
+            foreach (Product product in productList)
             {
-                Console.WriteLine(product);
+                productRepository.Create(product);
             }
+
+
+            //foreach (Account account in context.Accounts)
+            //{
+            //    Console.WriteLine(account.Name);
+            //}
+
+            //SqliteProductRepository productRepository = new SqliteProductRepository();
+
+            //foreach (Product product in productRepository.SelectAll())
+            //{
+            //    Console.WriteLine(product);
+            //}
             //Product product = new Product(1, "chair", 22.0, 34.7);
             //productRepository.Create(product);
 

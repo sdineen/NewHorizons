@@ -10,7 +10,9 @@ namespace ConsoleApp1
     {
         public int OrderId { get; set; }
         public DateTime Date { get; set; }
-        public Account? Account { get; set; }
+        public Account? Account { get; set; } //association
+
+        public int AccountId { get; set; } //foreign key property
         public ICollection<LineItem> LineItems { get; set; } = new HashSet<LineItem>();
         public OrderStatus OrderStatus { get; set; }
 

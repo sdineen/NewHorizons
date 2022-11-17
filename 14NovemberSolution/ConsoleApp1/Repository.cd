@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ConsoleApp1.SqliteProductRepository">
+    <Position X="2" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAgAAAAAAAAAAAEAAEAAAAAAAAACAAA=</HashCode>
+      <FileName>SqliteProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ConsoleApp1.IProductRepository">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAEAAEAAAAAAAAACAAA=</HashCode>
+      <FileName>IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
