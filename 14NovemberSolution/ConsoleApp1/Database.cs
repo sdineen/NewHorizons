@@ -11,21 +11,40 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            SqliteConnection connection = new SqliteConnection("Data Source=database.db");
             try
             {
+                using SqliteConnection connection = new SqliteConnection("Data Source=database.db");
                 connection.Open();
                 SqliteCommand cmd = new SqliteCommand();
                 cmd.Connection = connection;
                 cmd.CommandText = "create table if not exists accounts(id integer primary key, name text not null, password text not null); ";
                 bool tableCreated = cmd.ExecuteNonQuery() == 1;
-                cmd.CommandText = "insert into accounts (name, password)  values('John Smith', 'test'); ";
+                cmd.CommandText = "insert into accountsx (name, password)  values('John Smith', 'test'); ";
                 int rowsInserted = cmd.ExecuteNonQuery();
             }
-            finally
+            catch (SqliteException ex)
             {
-                connection.Close();
+                Console.WriteLine(ex.Message);
             }
+
+
+
+
+            //SqliteConnection connection = new SqliteConnection("Data Source=database.db");
+            //try
+            //{
+            //    connection.Open();
+            //    SqliteCommand cmd = new SqliteCommand();
+            //    cmd.Connection = connection;
+            //    cmd.CommandText = "create table if not exists accounts(id integer primary key, name text not null, password text not null); ";
+            //    bool tableCreated = cmd.ExecuteNonQuery() == 1;
+            //    cmd.CommandText = "insert into accounts (name, password)  values('John Smith', 'test'); ";
+            //    int rowsInserted = cmd.ExecuteNonQuery();
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
 
         }
     }
