@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ConsoleApp1.CollectionExamples</StartupObject>
+    <StartupObject>ConsoleApp1.Database</StartupObject>
   </PropertyGroup>
 
 </Project>
