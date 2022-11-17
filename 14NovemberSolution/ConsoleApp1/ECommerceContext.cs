@@ -14,6 +14,9 @@ namespace ConsoleApp1
         {
             optionsBuilder.UseSqlite("Data Source=database.db");
         }
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasData(
