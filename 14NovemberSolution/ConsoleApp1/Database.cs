@@ -15,16 +15,23 @@ namespace ConsoleApp1
             EfProductRepository productRepository = new EfProductRepository(
                 new ECommerceContext());
 
-            List<Product> productList = new List<Product>();
-            productList.Add(new NormalGood(1, "Pedigree Chum", 0.4));
-            productList.Add(new NormalGood(2, "Fork", 0.6));
-            productList.Add(new VeblenGood(3, "Krug Champagne", 25));
-            productList.Add(new VeblenGood(4, "Rolex watch", 700));
+            //productRepository.Delete(2);
 
-            foreach (Product product in productList)
-            {
-                productRepository.Create(product);
-            }
+
+            Product p = new Product(1, "Pedigree Chum", 0.4, 2.55);
+            productRepository.Update(p);
+
+
+            //List<Product> productList = new List<Product>();
+            //productList.Add(new NormalGood(1, "Pedigree Chum", 0.4));
+            //productList.Add(new NormalGood(2, "Fork", 0.6));
+            //productList.Add(new VeblenGood(3, "Krug Champagne", 25));
+            //productList.Add(new VeblenGood(4, "Rolex watch", 700));
+
+            //foreach (Product product in productList)
+            //{
+            //    productRepository.Create(product);
+            //}
 
 
             //foreach (Account account in context.Accounts)

@@ -17,7 +17,7 @@ namespace ConsoleApp1
             Id = id;
             Name = name;
             CostPrice = costPrice;
-            //RetailPrice = retailPrice;
+            RetailPrice = retailPrice;
         }
 
         public override string ToString()

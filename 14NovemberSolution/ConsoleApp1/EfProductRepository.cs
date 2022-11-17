@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,14 @@ namespace ConsoleApp1
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            Product product = context.Products.Find(id);
+            if (product == null)
+            {
+                return false;
+            }
+            context.Remove(product);
+            return context.SaveChanges() == 1;
+
         }
 
         public ICollection<Product>? SelectAll()
@@ -37,9 +45,24 @@ namespace ConsoleApp1
             return context.Products.Find(id);
         }
 
-        public bool Update(Product product)
+        public bool Update(Product modifiedProduct)
         {
-            throw new NotImplementedException();
+            Debug.WriteLine(context.Entry(modifiedProduct).State);
+
+            Product? product = context.Products.Find(modifiedProduct.Id);
+            Debug.WriteLine(context.Entry(product).State);
+            if (product == null)
+            {
+                return false;
+            }
+            product.CostPrice = modifiedProduct.CostPrice;
+            product.RetailPrice = modifiedProduct.RetailPrice;
+            Debug.WriteLine(context.Entry(product).State);
+            bool added =  context.SaveChanges() == 1;
+            Debug.WriteLine(context.Entry(product).State);
+            return added;
+
+
         }
     }
 }
