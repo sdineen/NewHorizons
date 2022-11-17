@@ -1,0 +1,21 @@
+        public bool Create(Account account)
+        {
+            using SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "insert into Accounts (id, name, password) values (@id, @name, @password)";
+            cmd.Connection = connection;
+            cmd.Parameters.AddWithValue("id", account.Id);
+            cmd.Parameters.AddWithValue("name", account.Name);
+            cmd.Parameters.AddWithValue("password", account.Password);
+            try
+            {
+                return cmd.ExecuteNonQuery() == 1;
+            }
+            catch (SqlException e)
+            {
+                Debug.WriteLine(e.Message);
+                return false;
+            }
+        }
