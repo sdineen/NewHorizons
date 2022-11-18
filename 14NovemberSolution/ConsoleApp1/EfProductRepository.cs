@@ -81,7 +81,7 @@ namespace ConsoleApp1
             Debug.WriteLine(context.Entry(modifiedProduct).State);
 
             Product? product = context.Products.Find(modifiedProduct.Id);
-            Debug.WriteLine(context.Entry(product).State);
+
             if (product == null)
             {
                 return false;

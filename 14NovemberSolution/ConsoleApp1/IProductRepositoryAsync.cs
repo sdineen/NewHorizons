@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1
 {
-    public interface IProductRepositoryAsync
+    public interface IProductRepositoryAsync : IProductRepository
     {
         Task<bool> CreateAsync(Product product);
         Task<bool> DeleteAsync(int id);

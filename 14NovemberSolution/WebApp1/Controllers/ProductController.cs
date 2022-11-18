@@ -34,14 +34,24 @@ namespace WebApp1.Controllers
 
         // POST api/<ProductController>
         [HttpPost]
-        public void Post([FromBody] Product value)
+        public void Post([FromBody] Product product)
         {
+            productRepository.Create(product);
         }
 
         // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IActionResult Put([FromBody] Product product)
         {
+            bool updated = productRepository.Update(product);
+            if (updated)
+            {
+                return Ok();
+            }
+            else
+            {
+                return new NotFoundResult();
+            }
         }
 
         // DELETE api/<ProductController>/5
