@@ -7,11 +7,11 @@ namespace WebApp1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class WebApiProductController : ControllerBase
     {
         private IProductRepositoryAsync productRepository;
 
-        public ProductController(IProductRepositoryAsync productRepository)
+        public WebApiProductController(IProductRepositoryAsync productRepository)
         {
             this.productRepository = productRepository;
         }
