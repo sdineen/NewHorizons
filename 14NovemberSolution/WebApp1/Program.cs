@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ECommerceContext>();
 builder.Services.AddTransient<IProductRepositoryAsync, EfProductRepository>();
+builder.Services.AddTransient<IAccountRepository, EfAccountRepository>();
 
 
 var app = builder.Build();

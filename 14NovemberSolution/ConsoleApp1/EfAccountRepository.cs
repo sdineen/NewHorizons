@@ -33,9 +33,14 @@ namespace ConsoleApp1
 
         }
 
-        public Account SelectById(string id)
+        //public Account SelectById(string id)
+        //{
+        //    return context.Accounts.Find(id);
+        //}
+
+        public async Task<Account> SelectById(string id)
         {
-            return context.Accounts.Find(id);
+            return await context.Accounts.FindAsync(id);
         }
 
         public bool Update(Account modifiedAccount)
