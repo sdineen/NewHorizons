@@ -9,21 +9,29 @@ namespace WebApp1.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        private IProductRepositoryAsync productRepository;
+
+        public ProductController(IProductRepositoryAsync productRepository)
+        {
+            this.productRepository = productRepository;
+        }
+
         // GET: api/<ProductController>
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            IProductRepositoryAsync productRepository = new EfProductRepository(
-                new ECommerceContext());
             ICollection<Product> products = await productRepository.SelectAllAsync();
             return Ok(products);
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            IProductRepository productRepository = new EfProductRepository(
+                new ECommerceContext());
+            Product product = productRepository.SelectById(id);
+            return Ok(product);
         }
 
         // POST api/<ProductController>
