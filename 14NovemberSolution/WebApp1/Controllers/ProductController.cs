@@ -52,9 +52,9 @@ namespace WebApp1.Controllers
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            bool deleted = productRepository.Delete(id);
+            bool deleted = await productRepository.DeleteAsync(id);
             return deleted ? Ok() : BadRequest();
         }
     }
