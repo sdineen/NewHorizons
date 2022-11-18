@@ -32,7 +32,11 @@ namespace WebApp1.Controllers
         [HttpPost]
         public IActionResult Create(Product product) 
         {
-            productRepository.Create(product);
+            bool added = productRepository.Create(product);
+            if(!added)
+            {
+                RedirectToAction("Create");
+            }
             return RedirectToAction("ProductList");
         }
     }

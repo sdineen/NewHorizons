@@ -20,7 +20,15 @@ namespace ConsoleApp1
         public bool Create(Product product)
         {
             context.Products.Add(product);
-            int updates = context.SaveChanges();
+            int updates = 0;
+            try
+            {
+                updates = context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                return false;
+            }
             return updates > 0;
         }
 
