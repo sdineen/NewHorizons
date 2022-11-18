@@ -1,7 +1,13 @@
+using ConsoleApp1;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ECommerceContext>();
+builder.Services.AddTransient<IProductRepositoryAsync, EfProductRepository>();
+
 
 var app = builder.Build();
 
