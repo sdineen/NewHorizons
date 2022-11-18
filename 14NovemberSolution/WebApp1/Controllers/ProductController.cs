@@ -41,23 +41,21 @@ namespace WebApp1.Controllers
 
         // PUT api/<ProductController>/5
         [HttpPut]
-        public IActionResult Put([FromBody] Product product)
+        public async Task<IActionResult> PutAsync([FromBody] Product product)
         {
-            bool updated = productRepository.Update(product);
-            if (updated)
-            {
-                return Ok();
-            }
-            else
-            {
-                return new NotFoundResult();
-            }
+            //bool updated = productRepository.Update(product);
+            //return updated? Ok(product) : BadRequest(); 
+
+            bool updated = await productRepository.UpdateAsync(product);
+            return updated ? Ok(product) : BadRequest();
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            bool deleted = productRepository.Delete(id);
+            return deleted ? Ok() : BadRequest();
         }
     }
 }
