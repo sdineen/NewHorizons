@@ -8,11 +8,26 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="ConsoleApp1.EfProductRepository">
+    <Position X="6.25" Y="2.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAACEAAAAAAAAAAAAAAAEAAEgAAAAgAIACAIA=</HashCode>
+      <FileName>EfProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="ConsoleApp1.IProductRepository">
-    <Position X="5" Y="0.5" Width="2.25" />
+    <Position X="4" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAEAAEAAAAAAAAACAAA=</HashCode>
       <FileName>IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ConsoleApp1.IProductRepositoryAsync">
+    <Position X="7.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgAAAAgAIAAAIA=</HashCode>
+      <FileName>IProductRepositoryAsync.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

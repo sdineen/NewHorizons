@@ -9,6 +9,14 @@ namespace ConsoleApp1
 {
     public class ECommerceContext : DbContext
     {
+    //    public ECommerceContext(DbContextOptions<ECommerceContext> options)
+    //: base(options)
+    //    {
+    //    }
+    //    public ECommerceContext()
+    //    {
+
+    //    }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

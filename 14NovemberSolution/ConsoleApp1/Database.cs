@@ -15,11 +15,17 @@ namespace ConsoleApp1
             EfProductRepository productRepository = new EfProductRepository(
                 new ECommerceContext());
 
+            foreach (var item in  productRepository.SelectAllAsync().Result)
+            {
+                Console.WriteLine(item);
+            }
+
+
             //productRepository.Delete(2);
 
 
-            Product p = new Product(1, "Pedigree Chum", 0.4, 2.55);
-            productRepository.Update(p);
+            //Product p = new Product(1, "Pedigree Chum", 0.4, 2.55);
+            //productRepository.Update(p);
 
 
             //List<Product> productList = new List<Product>();
