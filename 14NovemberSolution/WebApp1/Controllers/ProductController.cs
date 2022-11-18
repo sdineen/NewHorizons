@@ -26,17 +26,15 @@ namespace WebApp1.Controllers
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> GetAsync(int id)
         {
-            IProductRepository productRepository = new EfProductRepository(
-                new ECommerceContext());
-            Product product = productRepository.SelectById(id);
+            Product product = await productRepository.SelectByIdAsync(id);
             return Ok(product);
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Product value)
         {
         }
 
